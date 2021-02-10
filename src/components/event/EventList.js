@@ -22,12 +22,14 @@ export const EventList = (props) => {
                         <div>{event.description}</div>
                         <div>
                             {
-                                new Date().toLocaleDateString("en-US",
+                                new Date(event.date).toLocaleDateString("en-US",
                                 {
                                     weekday: 'long',
                                     year: 'numeric',
                                     month: 'long',
-                                    day: 'numeric'
+                                    day: 'numeric',
+                                    hour: 'numeric',
+                                    minute: 'numeric'
                                 })
                             }
                             @ {event.date}
