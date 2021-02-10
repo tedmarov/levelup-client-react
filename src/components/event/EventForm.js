@@ -6,13 +6,13 @@ import { useHistory } from "react-router-dom"
 
 export const EventForm = () => {
     const history = useHistory()
-    const { events, createEvent, getGames } = useContext(EventContext)
+    const { games, createEvent, getGames } = useContext(EventContext)
 
-    const [currentEvent, setEvent] = useState({
-        time = "",
-        date = "",
-        gameId = 0,
-        description = ""
+    const [currentEvent, setCurrentEvent] = useState({
+        time: "",
+        date: "",
+        gameId: 0,
+        description: ""
     })
 
     useEffect(() => {
@@ -66,8 +66,8 @@ export const EventForm = () => {
                 <div className="form-group">
                     <label htmlFor="description">Description: </label>
                     <input type="text" name="description" required autoFocus className="form-control"
-                        value={currentGame.description}
-                        onChange={changeGameState}
+                        value={currentEvent.description}
+                        onChange={changeEventState}
                     />
                 </div>
             </fieldset>                            
