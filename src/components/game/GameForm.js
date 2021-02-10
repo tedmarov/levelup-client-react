@@ -5,7 +5,7 @@ import { useHistory } from 'react-router-dom'
 
 export const GameForm = () => {
     const history = useHistory()
-    const { createGame, getGameTypes, gameTypes } = useContext(GameContext)
+    const { gameTypes, createGame, getGameTypes } = useContext(GameContext)
 
     /*
         Since the input fields are bound to the values of
@@ -48,6 +48,48 @@ export const GameForm = () => {
                         value={currentGame.title}
                         onChange={changeGameState}
                     />
+                </div>
+            </fieldset>
+            <fieldset>
+                <div className="form-group">
+                    <label htmlFor="maker">Maker: </label>
+                    <input type="text" name="maker" required autoFocus className="form-control"
+                        value={currentGame.maker}
+                        onChange={changeGameState}
+                    />
+                </div>
+            </fieldset>
+            <fieldset>
+                <div className="form-group">
+                    <label htmlFor="skillLevel">Skill Level: </label>
+                    <input type="number" name="skillLevel" required autoFocus className="form-control"
+                        value={currentGame.skillLevel}
+                        onChange={changeGameState}
+                    />
+                </div>
+            </fieldset>
+            <fieldset>
+                <div className="form-group">
+                    <label htmlFor="numberOfPlayers">Number of Players: </label>
+                    <input type="number" name="numberOfPlayers" required autoFocus className="form-control"
+                        value={currentGame.numberOfPlayers}
+                        onChange={changeGameState}
+                    />
+                </div>
+            </fieldset>
+            <fieldset>
+                <div className="form-group">
+                    <label htmlFor="gameTypeId">Game Type: </label>
+                    <select name="gameTypeId" required autoFocus className="form-control"
+                        value={currentGame.gameTypeId}
+                        onChange={changeGameState}>
+                        <option value="0">Select a game type</option>
+                        {gameTypes.map(gT => (
+                            <option key={gT.id} value={gT.id}>
+                                {gT.name}
+                            </option>
+                        ))}
+                    </select>
                 </div>
             </fieldset>
 
