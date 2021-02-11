@@ -53,7 +53,7 @@ export const GameForm = () => {
             <fieldset>
                 <div className="form-group">
                     <label htmlFor="maker">Maker: </label>
-                    <input type="text" name="maker" required autoFocus className="form-control"
+                    <input type="text" name="maker" className="form-control"
                         value={currentGame.maker}
                         onChange={changeGameState}
                     />
@@ -62,7 +62,7 @@ export const GameForm = () => {
             <fieldset>
                 <div className="form-group">
                     <label htmlFor="skillLevel">Skill Level: </label>
-                    <input type="number" name="skillLevel" required autoFocus className="form-control"
+                    <input type="number" name="skillLevel" className="form-control"
                         value={currentGame.skillLevel}
                         onChange={changeGameState}
                     />
@@ -71,7 +71,7 @@ export const GameForm = () => {
             <fieldset>
                 <div className="form-group">
                     <label htmlFor="numberOfPlayers">Number of Players: </label>
-                    <input type="number" name="numberOfPlayers" required autoFocus className="form-control"
+                    <input type="number" name="numberOfPlayers" className="form-control"
                         value={currentGame.numberOfPlayers}
                         onChange={changeGameState}
                     />
@@ -80,7 +80,7 @@ export const GameForm = () => {
             <fieldset>
                 <div className="form-group">
                     <label htmlFor="gameTypeId">Game Type: </label>
-                    <select name="gameTypeId" required autoFocus className="form-control"
+                    <select name="gameTypeId" className="form-control"
                         value={currentGame.gameTypeId}
                         onChange={changeGameState}>
                         <option value="0">Select a game type</option>
