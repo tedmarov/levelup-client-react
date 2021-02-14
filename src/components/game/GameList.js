@@ -20,8 +20,7 @@ export const GameList = () => {
                         <div className="game__players">{game.number_of_players} players needed</div>
                         <div className="game__skillLevel">Skill level is {game.skill_level}</div>
                     </section>
-                })
-            }
+                })}
                 <button className="btn btn-2 btn-sep icon-create"
                     onClick={() => history.push("/games/new")}>
                         Register New Game
