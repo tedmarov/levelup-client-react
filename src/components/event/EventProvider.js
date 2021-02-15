@@ -39,22 +39,22 @@ export const EventProvider = (props) => {
     }
 
     const leaveEvent = eventId => {
-        return fetch(`http://localhost:8000/events/${ eventId }/signup`, {
+        return fetch(`http://localhost:8000/events/${eventId}/signup`, {
             method: "DELETE",
             headers:{
                 "Authorization": `Token ${localStorage.getItem("lu_token")}`
             }
         })
-            .then(response => response.json())
             .then(getEvents)
     }
     
-    const joinEvent = eventId => {
-        return fetch(`http://localhost:8000/events/${ eventId }/signup`, {
+    const joinEvent = event => {
+        return fetch(`http://localhost:8000/events/${event.id}/signup`, {
             method: "POST",
             headers:{
                 "Authorization": `Token ${localStorage.getItem("lu_token")}`
-            }
+            },
+            body: JSON.stringify(event)
         })
             .then(response => response.json())
             .then(getEvents)

@@ -3,7 +3,7 @@ import { EventContext } from "./EventProvider.js"
 import { useHistory } from 'react-router-dom'
 import "./Event.css"
 
-export const EventList = (props) => {
+export const EventList = () => {
     const { events, getEvents, leaveEvent, joinEvent } = useContext(EventContext)
     const history = useHistory()
 
@@ -50,7 +50,7 @@ export const EventList = (props) => {
                                     </button>
                                         : 
                                     <button className="btn btn-2"
-                                        onClick={() => joinEvent(event.id)}>
+                                        onClick={() => joinEvent(event)}>
                                             Join
                                     </button>
                         }
